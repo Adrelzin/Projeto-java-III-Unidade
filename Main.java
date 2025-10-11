@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Cliente> clientes = new ArrayList<>();
+        ArrayList<Produto> produtos = new ArrayList<>();
         
         int opcao;
 
@@ -17,16 +18,19 @@ public class Main {
                 case 1:
                     Cliente novoCliente = cadastrarCliente(scanner);
                     clientes.add(novoCliente);
-                    System.out.println("\n Cliente Cadastrado com sucesso!\n");
+                    System.out.println("\n Cliente Cadastrado!\n");
                     novoCliente.exibirCliente();
                     break;
 
                 case 2:
-                    System.out.println("Cadastrar Produto (em desenvolvimento)");
+                    Produto novoProduto = cadastrarProduto(scanner);
+                    produtos.add(novoProduto);
+                    System.out.println("\n Produto Cadastrado!");
+                    novoProduto.exibirProduto();
                     break;
 
                 case 3:
-                    System.out.println("Cadastrar Pedido (em desenvolvimento)");
+                    System.out.println("Fazer pedido");
                     break;
 
                 case 4:
@@ -50,7 +54,7 @@ public class Main {
                 ========================================
                 1 - Cadastrar Cliente
                 2 - Cadastrar Produto
-                3 - Cadastrar Pedido
+                3 - Fazer Pedido
                 4 - Sair
                 ========================================
                 """);
@@ -71,5 +75,23 @@ public class Main {
         String email = scanner.nextLine();
 
         return new Cliente(id, nome, telefone, email);
+    }
+
+    public static Produto cadastrarProduto(Scanner scanner){
+        System.out.print("Digite o id do produto: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Digite o nome do produto: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Digite o preço do produto: ");
+        double preco = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.print("Digite a categoria do produto: ");
+        String categoria = scanner.nextLine();
+
+        return new Produto(id, nome, preco, categoria);
     }
 } 
