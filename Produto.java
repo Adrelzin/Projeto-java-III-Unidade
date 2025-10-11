@@ -4,8 +4,16 @@ public class Produto {
     private double preco;
     private String categoria;
 
+
+    public Produto(int idProduto, String nome, double preco, String categoria) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.preco = preco;
+        this.categoria = categoria;
+    }
+
     public void exibirProduto() {
-        System.out.println("Produto: " + nome + ", Categoria: " + categoria + ", Preço: " + preco);
+        System.out.println("ID do produto: " + idProduto + ", Produto: " + nome + ", Preço: " + preco + ", Categoria: " + categoria);
     }
 
 
