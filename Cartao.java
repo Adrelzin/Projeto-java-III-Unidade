@@ -3,7 +3,12 @@ public class Cartao extends Pagamento {
     private String nomeTitular;
     private String validade;
 
-
+	public Cartao(int idPagamento, double valor, String numeroCartao, String nomeTitular, String validade){
+		super(idPagamento, valor);
+		this.numeroCartao = numeroCartao;
+		this.nomeTitular = nomeTitular;
+		this.validade = validade;
+	}
 
     public String getNumeroCartao() {
         return this.numeroCartao;
@@ -31,11 +36,8 @@ public class Cartao extends Pagamento {
 
     @Override
     public void processarPagamento() {
-        
         System.out.println("Processando pagamento com cartão para " + nomeTitular);
     }
 
     
-} 
-    
-
+}
