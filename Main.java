@@ -30,7 +30,19 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Fazer pedido");
+					if (clientes.isEmpty()){
+						System.out.println("Não tem clientes cadastrados");
+						break;
+					}
+					
+					if	(produtos.isEmpty()){
+						System.out.println("Não tem produtos cadastrados");
+						break;
+					}
+					
+                    Pedido novoPedido = fazerPedido(scanner, clientes, produtos, pedido.size() + 1);
+					pedidos.add(novoPedido);
+					System.out.println
                     break;
 
                 case 4:
@@ -94,4 +106,8 @@ public class Main {
 
         return new Produto(id, nome, preco, categoria);
     }
+	
+	public static ItemPedido cadastrarPedido(Scanner scanner){
+			
+	}
 } 
