@@ -4,7 +4,6 @@ public class Produto {
     private double preco;
     private String categoria;
 
-
     public Produto(int idProduto, String nome, double preco, String categoria) {
         this.idProduto = idProduto;
         this.nome = nome;
@@ -50,3 +49,4 @@ public class Produto {
     }
     
 }
+
