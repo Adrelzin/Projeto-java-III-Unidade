@@ -7,6 +7,15 @@ public class Pedido {
     private Cliente cliente;
     private List<ItemPedido> itens;
     private Pagamento pagamento;
+	
+	public Pedido(int idPedido, String tipoPedido, double valorPedido, Cliente cliente, List<ItemPedido> itens, Pagamento pagamento){
+		this.idPedido = idPedido;
+		this.tipoPedido = tipoPedido;
+		this.valorPedido = valorPedido;
+		this.cliente = cliente;
+		this.itens = itens;
+		this.pagamento = pagamento;
+	}
 
     public void adicionarItem(ItemPedido item) {
         itens.add(item);
